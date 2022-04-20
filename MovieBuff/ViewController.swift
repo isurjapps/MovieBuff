@@ -11,7 +11,13 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        var movieListService = NetworkManager()
+        movieListService.downloadMovies { result in
+            print("Data Result Is: \(result)")
+        } failure: { error in
+            print("Error Is: \(error)")
+        }
+
     }
 
 
